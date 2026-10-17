@@ -20,7 +20,7 @@ document.getElementById("tombolBayar").addEventListener("click", async () => {
   };
 
   try {
-    // Kirim ke server Vercel
+    // Alamat API harus persis /api/bayar-server
     const res = await fetch("/api/bayar-server", {
       method: "POST",
       headers: {"Content‑Type":"application/json"},
@@ -31,10 +31,12 @@ document.getElementById("tombolBayar").addEventListener("click", async () => {
       window.snap.pay(hasil.token, {
         onSuccess: () => alert("Pembayaran berhasil (uji‑coba)"),
         onPending: () => alert("Menunggu bayar"),
-        onError: () => alert("Gagal bayar")
+        onError: () => alert("Gagal buat pembayaran")
       });
+    } else {
+      alert("Tidak dapat token pembayaran");
     }
   } catch (err) {
-    alert("Server belum siap / ada kesalahan");
+    alert("❌ Tidak bisa hubungi server: kemungkinan build masih gagal");
   }
 });
