@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contoh Belajar Pembayaran</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>☕ Pesan Minuman</h1>
+
+    <!-- Daftar barang -->
+    <div class="item">
+      <p>Kopi Hitam — Rp 800</p>
+      <button class="tambah" data-harga="800">+ Tambah</button>
+    </div>
+    <div class="item">
+      <p>Teh Manis — Rp 600</p>
+      <button class="tambah" data-harga="600">+ Tambah</button>
+    </div>
+
+    <!-- Ringkasan pesanan -->
+    <div class="ringkasan">
+      <h3>Total: <span id="total">Rp 0</span></h3>
+      <label>Nama Anda:</label>
+      <input type="text" id="nama" placeholder="Masukkan nama">
+      <button id="bayar">Lanjut ke Pembayaran</button>
+    </div>
+
+    <!-- Area pembayaran (simulasi) -->
+    <div id="area‑bayar" class="sembunyi">
+      <h3>Halaman Pembayaran</h3>
+      <p>Total yang harus dibayar: <span id="total‑bayar"></span></p>
+      <p class="keterangan">(Ini simulasi: belum terhubung ke layanan pembayaran asli)</p>
+      <button id="sukses">✅ Bayar Berhasil (Simulasi)</button>
+      <button id="kembali">← Kembali</button>
+    </div>
+
+    <!-- Notifikasi setelah bayar -->
+    <div id="sukses‑pesan" class="sembunyi">
+      <h3>🎉 Pesanan terkirim ke kasir!</h3>
+      <p>Data pesanan disimpan sementara untuk dipelajari</p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
